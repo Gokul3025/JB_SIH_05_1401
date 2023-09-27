@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Castoro&family=Mooli&family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Castoro&family=Mooli&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Castoro&family=Crimson+Text:ital@1&family=Mooli&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Castoro&family=Crimson+Text:ital@1&family=Mooli&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Castoro&family=Crimson+Text:ital@1&family=Mooli&family=Oswald:wght@300&display=swap");
+      @font-face {
+        font-family: roxborough;
+        src: url(fonts/Roxborough\ CF.ttf);
+      }
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #b2beb5;
+        font-family: "Castoro", serif;
+      }
+      section {
+        overflow: hidden;
+      }
+      .container {
+        display: flex;
+        flex-direction: row;
+      }
+      .upload {
+        margin-top: 110px;
+        margin-left: 120px;
+        width: 50%;
+      }
+      .title {
+        font-family: roxborough;
+        align-items: center;
+        margin-top: -80px;
+        font-size: 60px;
+        margin-left: 100px;
+      }
+      .ut {
+        padding: 15px;
+      }
+      .form {
+        border-radius: 10px;
+        margin-top: 40px;
+        width: 400px;
+        height: 400px;
+        background-color: white;
+      }
+      .icon {
+        margin-left: 160px;
+        margin-top: 30px;
+      }
+      .container2 {
+        margin-left: 80px;
+        margin-top: 40px;
+      }
+      .form-group {
+        margin-top: 20px;
+      }
+      .form-group1 {
+        margin-left: 70px;
+        margin-top: 40px;
+      }
+      .form-group1 button {
+        padding: 10px 20px;
+        background-color: #297119;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+
+      input[type="file"] {
+        margin-bottom: 20px;
+        display: block;
+        padding: 5px;
+        margin-bottom: 10px;
+        border: none;
+        border-bottom: 0.2px solid rgb(0, 0, 0);
+        background-color: transparent;
+      }
+
+      input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+
+      ::-webkit-file-upload-button {
+        color: white;
+        padding: 10px;
+        background-color: #297119;
+        border-radius: 5px;
+      }
+      .img {
+        background: url(91352.jpg);
+        background-position: center;
+        background-size: cover;
+        width: 900px;
+        height: 100vh;
+      }
+      .desc {
+        height: 50px;
+        width: 700px;
+        backdrop-filter: blur(3px);
+        background-color: transparent;
+        margin-top: 300px;
+        padding: 5px;
+        color: white;
+        font-family: roxborough;
+        text-align: center;
+        font-weight: 200;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .upload {
+        animation: fadeIn 1s ease-in-out forwards;
+      }
+
+      .img {
+        animation: fadeIn 1.3s ease-in-out forwards;
+      }
+
+      .form-group1 {
+        animation: fadeIn 2s ease-in-out forwards;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div>
+        <div class="container">
+          <div class="upload">
+            <h1 class="title">Plant Doc</h1>
+            <form
+              class="form"
+              action="/predict"
+              method="post"
+              enctype="multipart/form-data"
+            >
+              <h1 class="ut">Upload an Image</h1>
+              <img class="icon" src="icon.png" alt="Description of the image" />
+              <div class="container2">
+                <div class="form-group">
+                  <input
+                    type="file"
+                    id="file"
+                    name="file[]"
+                    multiple
+                    accept="image/*"
+                  />
+                </div>
+                <div class="form-group1">
+                  <button type="submit" value="predict">Predict</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="img">
+            <h2 class="desc">
+              Don't let your garden suffer, learn how to cure diseases and keep
+              your plants thriving!
+            </h2>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
